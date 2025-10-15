@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Resume - Resume Classifier AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>Resume Classifier AI</span>
+                </div>
+                <nav class="navigation">
+                    <a href="/" class="nav-link">Home</a>
+                    <a href="/upload" class="nav-link active">Upload</a>
+                    <a href="/results" class="nav-link">Results</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="upload-section">
+            <div class="container">
+                <div class="upload-header">
+                    <h1>Upload Your Resume</h1>
+                    <p>Select a resume file and let our AI classify it instantly</p>
+                </div>
+
+                <div class="upload-container">
+                    <div class="upload-card">
+                        <div id="drop-zone" class="drop-zone">
+                            <div class="drop-zone-content">
+                                <i class="fas fa-cloud-upload-alt drop-icon"></i>
+                                <h3>Drop your resume here</h3>
+                                <p>or click to browse files</p>
+                                <input type="file" id="file-input" accept=".pdf,.doc,.docx,.txt" style="display: none;">
+                                <div class="file-types">
+                                    <span class="file-type">PDF</span>
+                                    <span class="file-type">DOC</span>
+                                    <span class="file-type">DOCX</span>
+                                    <span class="file-type">TXT</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="file-info" class="file-info" style="display: none;">
+                            <div class="file-details">
+                                <i class="fas fa-file-alt"></i>
+                                <div class="file-meta">
+                                    <span id="file-name"></span>
+                                    <span id="file-size"></span>
+                                </div>
+                            </div>
+                            <button id="remove-file" class="remove-btn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+
+                        <div class="upload-actions">
+                            <button id="upload-btn" class="btn btn-primary" disabled>
+                                <i class="fas fa-upload"></i>
+                                Upload & Classify
+                            </button>
+                            <button id="cancel-btn" class="btn btn-secondary" style="display: none;">
+                                <i class="fas fa-times"></i>
+                                Cancel
+                            </button>
+                        </div>
+                    </div>
+
+                    <div id="progress-container" class="progress-container" style="display: none;">
+                        <div class="progress-header">
+                            <h3>Processing Resume...</h3>
+                            <span id="progress-text">Uploading file...</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div id="progress-fill" class="progress-fill"></div>
+                        </div>
+                    </div>
+
+                    <div id="results-container" class="results-container" style="display: none;">
+                        <div class="results-card">
+                            <div class="results-header">
+                                <i class="fas fa-check-circle success-icon"></i>
+                                <h3>Classification Complete!</h3>
+                            </div>
+                            
+                            <div class="classification-result">
+                                <div class="predicted-category">
+                                    <label>Predicted Category:</label>
+                                    <span id="predicted-category" class="category-badge"></span>
+                                </div>
+                                
+                                <div class="confidence-score">
+                                    <label>Confidence Score:</label>
+                                    <div class="confidence-bar">
+                                        <div id="confidence-fill" class="confidence-fill"></div>
+                                        <span id="confidence-text" class="confidence-text"></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="all-scores">
+                                <h4>All Category Scores:</h4>
+                                <div id="scores-list" class="scores-list"></div>
+                            </div>
+
+                            <div class="results-actions">
+                                <button id="new-upload-btn" class="btn btn-primary">
+                                    <i class="fas fa-plus"></i>
+                                    Upload Another
+                                </button>
+                                <a href="/results" class="btn btn-secondary">
+                                    <i class="fas fa-list"></i>
+                                    View All Results
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="error-container" class="error-container" style="display: none;">
+                        <div class="error-card">
+                            <div class="error-header">
+                                <i class="fas fa-exclamation-triangle error-icon"></i>
+                                <h3>Upload Failed</h3>
+                            </div>
+                            <p id="error-message"></p>
+                            <button id="retry-btn" class="btn btn-primary">
+                                <i class="fas fa-redo"></i>
+                                Try Again
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="upload-info">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <i class="fas fa-shield-alt"></i>
+                            <div>
+                                <h4>Secure Upload</h4>
+                                <p>Your files are processed securely and deleted after classification</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-file-check"></i>
+                            <div>
+                                <h4>Supported Formats</h4>
+                                <p>PDF, DOC, DOCX, and TXT files up to 16MB</p>
+                            </div>
+                        </div>
+                        <div class="info-item">
+                            <i class="fas fa-lightning-bolt"></i>
+                            <div>
+                                <h4>Fast Processing</h4>
+                                <p>Get classification results in seconds</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Resume Classifier AI. Built with ❤️ for efficient resume processing.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/upload.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume Classifier AI - Smart Resume Categorization</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <span>Resume Classifier AI</span>
+                </div>
+                <nav class="navigation">
+                    <a href="/" class="nav-link active">Home</a>
+                    <a href="/upload" class="nav-link">Upload</a>
+                    <a href="/results" class="nav-link">Results</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Smart AI-Powered <span class="highlight">Resume Classification</span>
+                    </h1>
+                    <p class="hero-description">
+                        Automatically categorize resumes using advanced machine learning algorithms. 
+                        Upload your resume and get instant classification with confidence scores across multiple job categories.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="/upload" class="btn btn-primary">
+                            <i class="fas fa-upload"></i>
+                            Upload Resume
+                        </a>
+                        <a href="/results" class="btn btn-secondary">
+                            <i class="fas fa-chart-bar"></i>
+                            View Results
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="classification-demo">
+                        <div class="resume-icon">
+                            <i class="fas fa-file-alt"></i>
+                        </div>
+                        <div class="arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        <div class="categories">
+                            <div class="category-item">Software Engineer</div>
+                            <div class="category-item">Data Scientist</div>
+                            <div class="category-item">Product Manager</div>
+                            <div class="category-item">Marketing Manager</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <h2 class="section-title">Why Choose Our Resume Classifier?</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI-Powered</h3>
+                        <p>Advanced machine learning algorithms trained on thousands of resumes for accurate classification.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightning-bolt"></i>
+                        </div>
+                        <h3>Lightning Fast</h3>
+                        <p>Get instant classification results within seconds of uploading your resume.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure & Private</h3>
+                        <p>Your resume data is processed securely and never shared with third parties.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Detailed Analytics</h3>
+                        <p>Get comprehensive classification scores and confidence levels for better insights.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Supported Job Categories</h2>
+                <div class="categories-grid">
+                    <div class="category-tag">
+                        <i class="fas fa-code"></i>
+                        <span>Software Engineer</span>
+                    </div>
+                    <div class="category-tag">
+                        <i class="fas fa-database"></i>
+                        <span>Data Scientist</span>
+                    </div>
+                    <div class="category-tag">
+                        <i class="fas fa-tasks"></i>
+                        <span>Product Manager</span>
+                    </div>
+                    <div class="category-tag">
+                        <i class="fas fa-bullhorn"></i>
+                        <span>Marketing Manager</span>
+                    </div>
+                    <div class="category-tag">
+                        <i class="fas fa-handshake"></i>
+                        <span>Sales Representative</span>
+                    </div>
+                    <div class="category-tag">
+                        <i class="fas fa-users"></i>
+                        <span>HR Manager</span>
+                    </div>
+                    <div class="category-tag">
+                        <i class="fas fa-calculator"></i>
+                        <span>Financial Analyst</span>
+                    </div>
+                    <div class="category-tag">
+                        <i class="fas fa-cogs"></i>
+                        <span>Operations Manager</span>
+                    </div>
+                    <div class="category-tag">
+                        <i class="fas fa-paint-brush"></i>
+                        <span>Designer</span>
+                    </div>
+                    <div class="category-tag">
+                        <i class="fas fa-ellipsis-h"></i>
+                        <span>Other</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <div class="container">
+                <h2 class="section-title">How It Works</h2>
+                <div class="steps">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <h3>Upload Resume</h3>
+                        <p>Upload your resume in PDF, DOCX, or TXT format</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <h3>AI Processing</h3>
+                        <p>Our AI analyzes your resume content and extracts key features</p>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <h3>Get Results</h3>
+                        <p>Receive detailed classification with confidence scores</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-robot"></i>
+                        <span>Resume Classifier AI</span>
+                    </div>
+                    <p>Intelligent resume classification powered by advanced AI technology.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/upload">Upload Resume</a></li>
+                        <li><a href="/results">View Results</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Technology</h4>
+                    <ul>
+                        <li>Python & Flask</li>
+                        <li>Machine Learning</li>
+                        <li>Natural Language Processing</li>
+                        <li>TensorFlow & scikit-learn</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Resume Classifier AI. Built with ❤️ for efficient resume processing.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

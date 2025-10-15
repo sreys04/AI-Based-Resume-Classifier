@@ -1,0 +1,35 @@
+# Core web framework
+flask==2.3.3
+flask-cors==4.0.0
+flask-sqlalchemy==3.0.5
+flask-migrate==4.0.5
+
+# Data processing and ML
+pandas==2.0.3
+numpy==1.24.3
+scikit-learn==1.3.0
+nltk==3.8.1
+spacy==3.6.1
+textblob==0.17.1
+
+# PDF and document processing
+PyPDF2==3.0.1
+python-docx==0.8.11
+pdfplumber==0.9.0
+
+# Database
+sqlite3
+
+# API and validation
+marshmallow==3.20.1
+werkzeug==2.3.7
+
+# Environment and config
+python-dotenv==1.0.0
+
+# Testing
+pytest==7.4.2
+pytest-flask==1.2.0
+
+# Deployment
+gunicorn==21.2.0
